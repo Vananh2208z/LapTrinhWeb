@@ -1,0 +1,27 @@
+﻿@model BTL.Models.LoginModel
+@{
+    ViewBag.Title = "LoginForm";
+    Layout = "~/Views/Share/_LayoutPage1.cshtml";
+}
+
+<div class="mt-3 mb-3">
+    @using (@Html.BeginForm("Index", "Login", FormMethod.Post, htmlAttributes: new { @class = "form", @id = "form" }))
+    {
+        <div class="field email">
+            <div class="icon"></div>
+            @Html.TextBoxFor(model => model.username, htmlAttributes: new { @class = "input", @id = "email", @placeholder = "Email" })
+        </div>
+        <div class="field password">
+            <div class="icon"></div>
+            @Html.PasswordFor(model => model.password, htmlAttributes: new { @class = "input", @id = "password", @placeholder = "Password" })
+        </div>
+        <button class="button" id="submit" type="submit">
+            LOGIN
+            <div class="side-top-bottom"></div>
+            <div class="side-left-right"></div>
+        </button><small>Fill in the form</small>
+    }
+</div>
+
+<link href="~/css/style.css" rel="stylesheet" />
+<script src="~/js/index.js"></script>

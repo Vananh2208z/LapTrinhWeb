@@ -1,0 +1,49 @@
+﻿@model BTL.Models.account
+@{
+    ViewBag.Title = "CreateAccount";
+    Layout = "~/Views/Share/_LayoutPage1.cshtml";
+}
+
+<div class="text-center mt-3"><h1>Đăng ký tài khoản</h1></div>
+
+
+@if (ViewBag.mess != null)
+{
+    <script>alert("@ViewBag.mess");</script>
+}
+<div class="mt-3 mb-3">
+    @using (@Html.BeginForm("CreateAcount", "Login", FormMethod.Post, htmlAttributes: new { @class = "form", @id = "form" }))
+    {
+        <div class="field email">
+            <div class="icon"></div>
+            @Html.TextBoxFor(model => model.username, htmlAttributes: new { @class = "input", @id = "email", @placeholder = "Tải khoản" })
+        </div>
+        <div class="field password">
+            <div class="icon"></div>
+            @Html.PasswordFor(model => model.password, htmlAttributes: new { @class = "input", @id = "password", @placeholder = "Mật khẩu" })
+        </div>
+        <div class="field">
+            <div class="icon"></div>
+            @Html.TextBoxFor(model => model.name, htmlAttributes: new { @class = "input", @id = "tenKH", @placeholder = "Tên" })
+        </div>
+        <div class="field">
+            <div class="icon"></div>
+            @Html.TextBoxFor(model => model.sdt, htmlAttributes: new { @class = "input", @id = "email", @placeholder = "Số điện thoại" })
+        </div>
+        <div class="field">
+            <div class="icon"></div>
+            @Html.TextBoxFor(model => model.email, htmlAttributes: new { @class = "input", @id = "ngaysinh", @placeholder = "Email" })
+        </div>
+        <button class="button" id="submit" type="submit">
+            Đăng ký
+            <div class="side-top-bottom"></div>
+            <div class="side-left-right"></div>
+        </button><small>Fill in the form</small>
+    }
+</div>
+
+<link href="~/css/style.css" rel="stylesheet" />
+<script src="~/js/index.js"></script>
+
+
+
